@@ -21,7 +21,22 @@ function App() {
         <div>
           <BarraPesquisa />
           <Filtro />
-          <Card />
+          <ul className='lista-cards'>
+              {dados ? dados.map((item, index) => (
+                <li key={index}>
+                  <Card
+                  id={item.id}
+                  imagemUrl={item.imagem_capa}
+                  titulo={item.titulo}
+                  resumo={item.resumo}
+                  linhasDeCodigo={item.linhas_de_codigo}
+                  compartilhamentos={item.compartilhamentos}
+                  comentarios={item.comentarios}
+                  usuario={item.usuario}
+                  />
+                </li>
+              )): null}
+          </ul>
         </div>
     </div>
 
